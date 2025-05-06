@@ -26,7 +26,7 @@ const app = express();
 // Enable CORS for frontend
 app.use(
   cors({
-    origin:'https://wander-logs-86sd.vercel.app', //frontend URL
+    origin: process.env.FRONTEND_ORIGIN, //frontend URL
     methods: ["GET", "POST", "PUT", "DELETE"], // Allow CRUD operations
     credentials: true, // Allow cookies & authorization headers
   })
