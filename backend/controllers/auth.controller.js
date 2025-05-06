@@ -69,6 +69,9 @@ export const signin = async (req, res, next) => {
       .status(200)
       .cookie("access_token", token, {
         httpOnly: true,
+        secure: true,       // ✅ required for HTTPS
+        sameSite: "None",   // ✅ required for cross-origin cookies (Vercel + Render)
+        maxAge: 24 * 60 * 60 * 1000, // optional: 1 day
       })
       .json(rest);
   } catch (error) {
