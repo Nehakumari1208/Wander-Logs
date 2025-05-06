@@ -32,6 +32,7 @@ app.use(
   })
 );
 
+app.options("*", cors());
 app.use(cookieParser());
 
 // for allowing json object in req body
